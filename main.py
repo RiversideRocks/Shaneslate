@@ -4,6 +4,8 @@ import json
 with open('templates/dictionary.json') as f:
    data = json.load(f)
 
+s = ""
+
 with open('text.txt','r') as file:
    
     for line in file:
@@ -12,6 +14,8 @@ with open('text.txt','r') as file:
    
             try:
                 translate = data[word]
-                print(translate)
+                s = s + " " + translate
             except:
-                print(word)
+                s = s + " " + word
+
+print(s)
